@@ -1,50 +1,58 @@
 #!/usr/bin/bash
 
 # install exuberant tags for taglist.vim
-apt-get -y install exuberant-ctags bash-completion
+sudo apt-get -y install exuberant-ctags bash-completion
 
 # update vim to 7.3 (7.1 default on debian)
-echo "deb http://ftp.de.debian.org/debian sid main" >> /etc/apt/sources.list
-apt-get update
-apt-get -y remove vim-common vim-runtime vim-gtk vim-gui-common
-apt-get -y install vim-common vim-runtime
-sed '$d' < /etc/apt/sources.list > tmp #; mv file2 file1
-mv tmp /etc/apt/sources.list
+sudo echo "deb http://ftp.de.debian.org/debian sid main" >> /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get -y remove vim-common vim-runtime vim-gtk vim-gui-common
+sudo apt-get -y install vim-common vim-runtime
+sudo sed '$d' < /etc/apt/sources.list > tmp #; mv file2 file1
+sudo mv tmp /etc/apt/sources.list
 sudo apt-get update
 
 # backup all dotfiles
-mkdir -p ~/.backup-profile
-if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]
+mkdir -p $HOME/.backup-profile
+if [ -f $HOME/.bashrc ]
 then
-  mv ~/.bashrc ~/.backup-profile/.bashrc
-else
-  rm ~/.bashrc
+  mv $HOME/.bashrc $HOME/.backup-profile/.bashrc
 fi
-if [ -f ~/.gitconfig ] && [ ! -L ~/.gitconfig ]
+if [ ! -L $HOME/.bashrc ]
 then
-  mv ~/.gitconfig ~/.backup-profile/.gitconfig
-else
-  rm ~/.gitconfig
+  rm $HOME/.bashrc
 fi
-if [ -f ~/.vimrc ] && [ ! -L ~/.vimrc ]
+if [ -f $HOME/.gitconfig ]
 then
-  mv ~/.vimrc ~/.backup-profile/.vimrc
-else
-  rm ~/.vimrc
+  mv $HOME/.gitconfig $HOME/.backup-profile/.gitconfig
 fi
-if [ -f ~/.vim ] && [ ! -L ~/.vim ]
+if [ ! -L $HOME/.gitconfig ]
 then
-  mv ~/.vim ~/.backup-profile/.vim
-else
-  rm ~/.vim
+  rm $HOME/.gitconfig
+fi
+if [ -f $HOME/.vimrc ]
+then
+  mv $HOME/.vimrc $HOME/.backup-profile/.vimrc
+fi
+if [ ! -L $HOME/.vimrc ]
+then
+  rm $HOME/.vimrc
+fi
+if [ -f $HOME/.vim ]
+then
+  mv $HOME/.vim $HOME/.backup-profile/.vim
+fi
+if [ ! -L $HOME/.vim ]
+then
+  rm $HOME/.vim
 fi
 
 # copy all file preference
 CURRENT=`pwd`
 
-ln -s $CURRENT/.bashrc ~/.bashrc
-ln -s $CURRENT/.gitconfig ~/.gitconfig
-ln -s $CURRENT/.vimrc ~/.vimrc
-ln -s $CURRENT/.vim ~/.vim
+ln -s $CURRENT/.bashrc $HOME/.bashrc
+ln -s $CURRENT/.gitconfig $HOME/.gitconfig
+ln -s $CURRENT/.vimrc $HOME/.vimrc
+ln -s $CURRENT/.vim $HOME/.vim
 
 echo "Installed !"
