@@ -110,9 +110,9 @@ set nofoldenable
 
 " My information
 iab xdate <c-r>=strftime("%d/%m/%Y %H:%M:%S")
-iab xname William DURAND
-iab xsigp William DURAND <william.durand1@gmail.com>
-iab xsigw William DURAND <william.durand1@gmail.com>
+iab xname Vincent MAZENOD
+iab xsigp Vincent MAZENOD <vmazenod@gmail.com>
+iab xsigw Vincent MAZENOD <vmazenod@gmail.com>
 
 " Markdown
 au! BufRead,BufNewFile *.markdown setfiletype mkd
@@ -142,15 +142,21 @@ set listchars=nbsp:¤,tab:>-,trail:¤,extends:>,precedes:<,eol:¶,trail:·
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove<cr>
+map tt :tabnew<cr>
+map te :tabedit
+map tc :tabclose<cr>
+map to :tabonly<cr>
+map tn :tabnext<cr>
+map tp :tabprevious<cr>
+map tf :tabfirst<cr>
+map tl :tablast<cr>
+map tm :tabmove<cr>
+
+" SfSwithView
+map <F9> :SfSwitchView<CR>
+
+" Project
+map <F10> <Plug>ToggleProject<cr>
 
 " NERDTree
 map <F11> :NERDTreeToggle<cr>
@@ -159,11 +165,14 @@ map <F11> :NERDTreeToggle<cr>
 map <F12> :TlistToggle<CR>
 let Tlist_Use_Right_Window  = 1
 
-" SfSwithView
-map <F9> :SfSwitchView<CR>
-
 " C++
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
 
 " Vmail
 let g:vmail_flagged_color = "ctermfg=yellow ctermbg=black cterm=bold"
+
+" http://blog.fluther.com/django-vim/
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
