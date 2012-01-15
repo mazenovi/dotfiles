@@ -90,6 +90,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -al'
+alias xampp='gksu /opt/lampp/share/xampp-control-panel/xampp-control-panel'    
 #alias la='ls -A'
 #alias l='ls -CF'
 
