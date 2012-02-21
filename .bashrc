@@ -100,3 +100,5 @@ alias xampp='gksu /opt/lampp/share/xampp-control-panel/xampp-control-panel'
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+export GIT_SSL_NO_VERIFY=1
