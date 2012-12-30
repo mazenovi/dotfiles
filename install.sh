@@ -7,7 +7,7 @@ sudo apt-get -y install exuberant-ctags bash-completion
 sudo echo "deb http://ftp.de.debian.org/debian sid main" >> /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get -y remove vim-common vim-runtime vim-gtk vim-gui-common
-sudo apt-get -y install vim-common vim-runtime
+sudo apt-get -y install vim-common vim-runtime vim-gnome
 sudo sed '$d' < /etc/apt/sources.list > tmp #; mv file2 file1
 sudo mv tmp /etc/apt/sources.list
 sudo apt-get update
