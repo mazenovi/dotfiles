@@ -37,7 +37,7 @@ esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
+# should be on thke output of commands, not on the prompt
 force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
@@ -52,7 +52,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+  if [ "$UID" -eq "0" ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  else
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\H:\w\$ '
 fi
@@ -90,7 +94,6 @@ fi
 
 # some more ls aliases
 alias ll='ls -al'
-alias xampp='gksu /opt/lampp/share/xampp-control-panel/xampp-control-panel'    
 #alias la='ls -A'
 #alias l='ls -CF'
 
@@ -102,3 +105,4 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export GIT_SSL_NO_VERIFY=1
+export PATH=/opt/lampp/bin:$PATH
