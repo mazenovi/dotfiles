@@ -4,6 +4,7 @@
 CURRENT=`pwd`
 
 ln -s $CURRENT/.bashrc /root/.bashrc
+ln -s $CURRENT/.profile /root/.profile
 ln -s $CURRENT/.gitconfig /root/.gitconfig
 ln -s $CURRENT/.vimrc /root/.vimrc
 ln -s $CURRENT/.vim /root/.vim

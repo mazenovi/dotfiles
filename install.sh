@@ -15,6 +15,14 @@ if [ ! -L $HOME/.bashrc ]
 then
   rm $HOME/.bashrc
 fi
+if [ -f $HOME/.profile ]
+then
+  mv $HOME/.profile $HOME/.backup-profile/.profile
+fi
+if [ ! -L $HOME/.profile ]
+then
+  rm $HOME/.profile
+fi
 if [ -f $HOME/.gitconfig ]
 then
   mv $HOME/.gitconfig $HOME/.backup-profile/.gitconfig
@@ -44,6 +52,7 @@ fi
 CURRENT=`pwd`
 
 ln -s $CURRENT/.bashrc $HOME/.bashrc
+ln -s $CURRENT/.profile $HOME/.profile
 ln -s $CURRENT/.gitconfig $HOME/.gitconfig
 ln -s $CURRENT/.vimrc $HOME/.vimrc
 ln -s $CURRENT/.vim $HOME/.vim
