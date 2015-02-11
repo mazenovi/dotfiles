@@ -51,11 +51,21 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+RED="\[\033[01;31m\]"
+GREEN="\[\033[01;32m\]"
+YELLOW="\[\033[0;33m\]"
+BLUE="\[\033[01;34m\]"
+NO_COLOR="\[\033[0m\]"
+
 if [ "$color_prompt" = yes ]; then
   if [ "$UID" -eq "0" ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}$RED\u@\H$:$BLUE\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
   else
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1="${debian_chroot:+($debian_chroot)}$GREEN\u@\H$BLUE:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
   fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\H:\w\$ '
