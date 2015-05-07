@@ -53,7 +53,10 @@ set undolevels=1000             " use many levels of undo
 let mapleader = ","
 
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+augroup fugitive_status
+  autocmd!
+  autocmd user Fugitive set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+augroup END     
 
 " Tabs and indentation. Yes, I like 2-space tabs.
 set tabstop=2
