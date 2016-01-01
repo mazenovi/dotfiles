@@ -1,60 +1,56 @@
 #!/usr/bin/bash
 
-sudo apt-get update
+# A script to install my development environments.
+# see https://github.com/themouette/dotfiles
 
-# install exuberant tags for taglist.vim
-sudo apt-get -y install exuberant-ctags bash-completion
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-# backup all dotfiles
-mkdir -p $HOME/.backup-profile
-if [ -f $HOME/.bashrc ]
-then
-  mv $HOME/.bashrc $HOME/.backup-profile/.bashrc
-fi
-if [ ! -L $HOME/.bashrc ]
-then
-  rm $HOME/.bashrc
-fi
-if [ -f $HOME/.profile ]
-then
-  mv $HOME/.profile $HOME/.backup-profile/.profile
-fi
-if [ ! -L $HOME/.profile ]
-then
-  rm $HOME/.profile
-fi
-if [ -f $HOME/.gitconfig ]
-then
-  mv $HOME/.gitconfig $HOME/.backup-profile/.gitconfig
-fi
-if [ ! -L $HOME/.gitconfig ]
-then
-  rm $HOME/.gitconfig
-fi
-if [ -f $HOME/.vimrc ]
-then
-  mv $HOME/.vimrc $HOME/.backup-profile/.vimrc
-fi
-if [ ! -L $HOME/.vimrc ]
-then
-  rm $HOME/.vimrc
-fi
-if [ -f $HOME/.vim ]
-then
-  mv $HOME/.vim $HOME/.backup-profile/.vim
-fi
-if [ ! -L $HOME/.vim ]
-then
-  rm $HOME/.vim
-fi
+# Install vim configuration files
+[[ -L ~/.vimrc ]] || {
+    rm -rf ~/.vimrc > /dev/null 2>&1 ;
+    ln -s ${DIR}/vim/vimrc ~/.vimrc
+}
+[[ -L ~/.vim ]] || {
+    rm -rf ~/.vim > /dev/null 2>&1
+    ln -s ${DIR}/vim/vim ~/.vim
+}
 
-# copy all file preference
-CURRENT=`pwd`
+# install Vundle if not already installed
+[[ -d ~/.vim/bundle/Vundle.vim ]] || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Install vundle dependencies
+vim +PluginInstall +qall
 
-ln -s $CURRENT/.bashrc $HOME/.bashrc
-ln -s $CURRENT/.profile $HOME/.profile
-ln -s $CURRENT/.gitconfig $HOME/.gitconfig
-ln -s $CURRENT/.vimrc $HOME/.vimrc
-ln -s $CURRENT/.vim $HOME/.vim
+[[ ! -d ~/.vim/bundle/command-t/ ]] || {
+    # Install command-t
+    # Compilation is required
+    cd ~/.vim/bundle/command-t/ruby/command-t
+    ruby extconf.rb
+    make
+    cd $DIR
+}
+[[ -f /usr/share/fonts/misc/PowerlineSymbols.otf ]] || {
+    # Install vim-airline/vim-powerline font
+    sudo wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -O /usr/share/fonts/misc/PowerlineSymbols.otf
+    fc-cache -vf ~/.fonts/
+    mkdir -p ~/.config/fontconfig/conf.d/
+    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf -O ~/.config/fontconfig/conf.d/10-powerline-symbols.conf
+}
 
-echo "Installed !"
+[[ -L ~/.gitconfig ]] || {
+    rm -rf ~/.gitconfig > /dev/null 2>&1 ;
+    ln -s ${DIR}/.gitconfig ~/.gitconfig
+}
+
+[[ -L ~/.bashrc ]] || {
+    rm -rf ~/.bashrc > /dev/null 2>&1 ;
+    ln -s ${DIR}/.bashrc ~/.bashrc
+}
+
+[[ -L ~/.profile ]] || {
+    rm -rf ~/.profile > /dev/null 2>&1 ;
+    ln -s ${DIR}/.profile ~/.profile
+}
+
+echo "*******************************"
+echo "*    Restart your terminal    *"
+echo "*******************************"
