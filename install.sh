@@ -10,15 +10,16 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 # Install vim configuration files
 [[ -L ~/.vimrc ]] || {
     rm -rf ~/.vimrc > /dev/null 2>&1 ;
-    ln -s ${DIR}/vim/vimrc ~/.vimrc
+    ln -s ${DIR}/.vimrc ~/.vimrc
 }
 [[ -L ~/.vim ]] || {
     rm -rf ~/.vim > /dev/null 2>&1
-    ln -s ${DIR}/vim/vim ~/.vim
+    ln -s ${DIR}/.vim ~/.vim
 }
 
 # install Vundle if not already installed
 [[ -d ~/.vim/bundle/Vundle.vim ]] || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # Install vundle dependencies
 vim +PluginInstall +qall
 
