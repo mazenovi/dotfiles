@@ -62,6 +62,8 @@ filetype indent on
 " Global
 " set hidden ruler wmnu               " Hide buffer instead of abandoning when unloading
 
+set shortmess=a                     "Avoiding the 'Hit ENTER to continue' prompts
+
 set wildmenu                        " Enhanced command line completion.
 set wildmode=full                   " Use list:longest to complete files like a shell.
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xpm,*.pyc,*.pyo           " Ignore certain files
