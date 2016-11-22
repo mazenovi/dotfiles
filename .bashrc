@@ -120,6 +120,7 @@ fi
 
 export GIT_SSL_NO_VERIFY=1
 export GIT_PROMPT_ONLY_IN_REPO=1
+export GIT_PROMPT_THEME=Crunch
 source ~/.bash-git-prompt/gitprompt.sh
 
 export PATH=~/.composer/vendor/bin:~/.local/bin/:/opt/lampp/bin:$PATH
