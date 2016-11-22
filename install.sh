@@ -44,6 +44,10 @@ vim +PluginInstall +qall
     ln -s ${DIR}/.gitconfig ~/.gitconfig
 }
 
+
+# install git-prompt if not already installed
+[[ -d ~/.bash-git-prompt ]] || git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+
 [[ -L ~/.bashrc ]] || {
     rm -rf ~/.bashrc > /dev/null 2>&1 ;
     ln -s ${DIR}/.bashrc ~/.bashrc
