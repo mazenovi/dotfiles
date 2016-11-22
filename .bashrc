@@ -120,3 +120,9 @@ fi
 
 export GIT_SSL_NO_VERIFY=1
 export PATH=~/.composer/vendor/bin:~/.local/bin/:/opt/lampp/bin:$PATH
+
+PATH="/home/mazenovi/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/mazenovi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/mazenovi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/mazenovi/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/mazenovi/perl5"; export PERL_MM_OPT;

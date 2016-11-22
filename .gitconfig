@@ -18,3 +18,14 @@
 	ui = true
 [credential]
 	helper = cache --timeout=3600
+[http]
+	postBuffer = 1048576000
+[diff]
+    tool = meld
+    guitool = meld
+[difftool "meld"]
+	path = /usr/bin/meld
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = /usr/bin/meld
