@@ -119,4 +119,4 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 export GIT_SSL_NO_VERIFY=1
-export PATH=/opt/lampp/bin:$PATH
+export PATH=~/.composer/vendor/bin:~/.local/bin/:/opt/lampp/bin:$PATH
