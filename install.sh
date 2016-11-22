@@ -3,7 +3,7 @@
 # A script to install my development environments.
 # see https://github.com/themouette/dotfiles
 
-sudo apt-get install -y vim-nox tree
+sudo apt-get install -y vim-nox tree tig
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
