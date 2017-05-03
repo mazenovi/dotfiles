@@ -110,6 +110,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lm='find . -type f -printf "%C@ %p\n" | sort -rn | head -n $1'
 alias gti='git'
+alias gpg='gpg2'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -123,8 +124,7 @@ export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Crunch
 source ~/.bash-git-prompt/gitprompt.sh
 
-export PATH=~/.composer/vendor/bin:~/.local/bin/:/opt/lampp/bin:$PATH
-
+export PATH=~$PATH:/.composer/vendor/bin:~/.local/bin/:/opt/lampp/bin
 PATH="/home/mazenovi/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/mazenovi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/mazenovi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
