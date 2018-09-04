@@ -2,9 +2,13 @@ map <F12> :NERDTreeToggle<CR>
 set pastetoggle=<F2>
 
 call plug#begin('~/.vim/plugged')
+  Plug 'drewtempelmeyer/palenight.vim'
   Plug 'https://github.com/scrooloose/nerdtree'
   Plug 'mxw/vim-jsx'
 call plug#end()
+
+set background=dark
+colorscheme palenight
 
 set tabstop=4
 set softtabstop=4
