@@ -31,12 +31,14 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 mkdir -p ~/.cmd-tools
 
-[[ -d ~/.cmd-tools/bash-git-prompt ]] || git clone https://github.com/magicmonty/bash-git-prompt.git ~/.cmd-tools/bash-git-prompt --depth=1 > /dev/null 2>&1
-[[ -f ~/.cmd-tools/gpgenv.sh ]] ||  wget https://raw.githubusercontent.com/themouette/dotfiles/master/zsh/zshrc.d/gnupg -O ~/.cmd-tools/gpgenv.sh > /dev/null 2>&1
+git clone https://github.com/magicmonty/bash-git-prompt.git ~/.cmd-tools/bash-git-prompt --depth=1 > /dev/null 2>&1
 
-[[ -d ~/.vim ]] || curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1
+wget https://raw.githubusercontent.com/themouette/dotfiles/master/zsh/zshrc.d/gnupg -O ~/.cmd-tools/gpgenv.sh > /dev/null 2>&1
 
+wget http://fc.isima.fr/~mazenod/_/isp.phar -O ~/.cmd-tools/isp > /dev/null 2>&1
+wget http://fc.isima.fr/~mazenod/_/wsec.phar -O ~/.cmd-tools/wsec > /dev/null 2>&1
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1
 vim +PlugInstall +qall
 
 echo "*******************************"

@@ -50,4 +50,4 @@ export GIT_PROMPT_THEME=Crunch
 source ~/.cmd-tools/bash-git-prompt/gitprompt.sh
 source ~/.cmd-tools/gpgenv.sh
 
-export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/
+export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools
