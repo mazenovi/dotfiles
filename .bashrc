@@ -18,6 +18,12 @@ fi
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(~\1)/'
 }
+    
+if [ "$UID" -eq "0" ]; then
+   PS1="${debian_chroot:+($debian_chroot)}$RED\u@\H$:$BLUE\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
+else
+   PS1="${debian_chroot:+($debian_chroot)}$GREEN\u@\H$BLUE:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
+fi
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -25,11 +31,6 @@ xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
-    if [ "$UID" -eq "0" ]; then
-      PS1="${debian_chroot:+($debian_chroot)}$RED\u@\H$:$BLUE\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
-    else
-      PS1="${debian_chroot:+($debian_chroot)}$GREEN\u@\H$BLUE:\w$YELLOW\$(parse_git_branch)$NO_COLOR\$ "
-    fi
     ;;
 esac
 
