@@ -19,7 +19,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lf=lastFile
 alias lm=lastFile
-alias m="bash ~/cloud/limos/utils.sh"
+alias m="bash ~/cloud/limos/scripts/utils.sh"
 alias vpn="sudo openvpn ~/cloud/limos/vimazeno/limos.ovpn"
 
 # command
