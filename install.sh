@@ -45,6 +45,8 @@ chmod 755 ~/.cmd-tools/wsec
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1
 vim +PlugInstall +qall
 
+source ~/.bashrc
+
 echo "*******************************"
 echo "*    Restart your terminal    *"
 echo "*******************************"
