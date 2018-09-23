@@ -33,6 +33,8 @@ mkdir -p ~/.cmd-tools
 
 git clone https://github.com/magicmonty/bash-git-prompt.git ~/.cmd-tools/bash-git-prompt --depth=1 > /dev/null 2>&1
 
+git clone git@gitlab.limos.fr:vimazeno/m.git ~/.cmd-tools/m --depth=1 > /dev/null 2>&1
+
 wget https://raw.githubusercontent.com/themouette/dotfiles/master/zsh/zshrc.d/gnupg -O ~/.cmd-tools/gpgenv.sh > /dev/null 2>&1
 
 wget http://fc.isima.fr/~mazenod/_/isp.phar -O ~/.cmd-tools/isp > /dev/null 2>&1
