@@ -48,7 +48,7 @@ export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Crunch
 # m
 export M_DEFAULT_TARGET_DIR="~/cloud/limos/vimazeno"
-export M_DEFAULT_RECIPIEN="vincent.mazenod@isima.fr"
+export M_DEFAULT_RECIPIENT="vincent.mazenod@isima.fr"
 
 source ~/.cmd-tools/bash-git-prompt/gitprompt.sh
 source ~/.cmd-tools/gpgenv.sh
