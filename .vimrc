@@ -4,7 +4,7 @@ set pastetoggle=<F2>
 call plug#begin('~/.vim/plugged')
   Plug 'drewtempelmeyer/palenight.vim'
   Plug 'https://github.com/scrooloose/nerdtree'
-  Plug 'mxw/vim-jsx'
+  Plug 'mxw/vim-polyglot'
 call plug#end()
 
 set background=dark
