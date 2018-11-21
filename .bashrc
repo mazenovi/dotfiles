@@ -48,9 +48,15 @@ export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Crunch
 # m
 export M_DEFAULT_TARGET_DIR="~/cloud/limos/vimazeno"
+export M_DEFAULT_CERT_DIR="~/cloud/limos/cri/cert"
 export M_DEFAULT_RECIPIENT="vincent.mazenod@isima.fr"
 
 source ~/.cmd-tools/bash-git-prompt/gitprompt.sh
 source ~/.cmd-tools/gpgenv.sh
 
-export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools
+export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools:/usr/local/go/bin
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+
+complete -C /usr/local/bin/vault vault
