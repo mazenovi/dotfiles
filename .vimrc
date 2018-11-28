@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 set background=dark
-colorscheme palenight
+silent! colorscheme palenight
 
 set tabstop=4
 set softtabstop=4
