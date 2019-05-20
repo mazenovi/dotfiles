@@ -59,4 +59,6 @@ export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools:/usr/local/
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 
+export VAULT_ADDR=https://vault.isima.fr
+export VAULT_USERNAME=vimazeno
 complete -C /usr/local/bin/vault vault

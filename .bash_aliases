@@ -21,7 +21,10 @@ alias lf=lastFile
 alias lm=lastFile
 alias m="bash ~/.cmd-tools/m/utils.sh"
 alias m_="bash ~/dev/tools/m/utils.sh"
-alias vpn="sudo openvpn ~/cloud/limos/vimazeno/limos.ovpn"
+alias vpn="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-cri.ovpn"
+alias vpn-etu="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu.ovpn"
+alias vpn-prof="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof.ovpn"
+alias vpn-test="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-test.ovpn"
 
 # command
 
