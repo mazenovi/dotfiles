@@ -56,9 +56,11 @@ source ~/.cmd-tools/gpgenv.sh
 
 export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools:/usr/local/go/bin
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/work
+export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 export VAULT_ADDR=https://vault.isima.fr
 export VAULT_USERNAME=vimazeno
 complete -C /usr/local/bin/vault vault
+export VAULT_ADDR=https://vault.cri.local.isima.fr
+export VAULT_USERNAME=vimazeno
