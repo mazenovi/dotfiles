@@ -25,6 +25,7 @@ alias vpn="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-cri.ovpn"
 alias vpn-etu="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu.ovpn"
 alias vpn-prof="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof.ovpn"
 alias vpn-test="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-test.ovpn"
+alias cmus-path="lsof -p $(pgrep cmus)"
 
 # command
 
