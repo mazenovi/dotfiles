@@ -46,6 +46,11 @@ fi
 export GIT_SSL_NO_VERIFY=1
 export GIT_PROMPT_ONLY_IN_REPO=1
 export GIT_PROMPT_THEME=Crunch
+function prompt_callback {
+    if [[ ! -z ${WORKSPACE} && ! -z ${VIRTUAL_ENV} ]] ; then
+        echo -n "${COLOR_LIGHT_GREEN}[${COLOR_LIGHT_RED}${WORKSPACE}${COLOR_LIGHT_GREEN}]${COLOR_RESET}"
+    fi
+}
 # m
 export M_DEFAULT_TARGET_DIR="~/cloud/limos/vimazeno"
 export M_DEFAULT_CERT_DIR="~/cloud/limos/cri/certs"
@@ -56,8 +61,13 @@ source ~/.cmd-tools/gpgenv.sh
 
 export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools
 
-export GOPATH=$HOME/work
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export WORKSPACE="cri"
+export PVE_HOST="pve1.cri.local.isima.fr"
+export SSH_KEY_PATH="~/.ssh/ids/limosadm"
+export SSL_KEYS_PATH="/home/mazenovi/cloud/limos/cri/certs"
+export VAULT_USERNAME="vimazeno"
 
 export VAULT_ADDR=https://vault.cri.local.isima.fr
 export VAULT_USERNAME=vimazeno

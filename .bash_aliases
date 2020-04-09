@@ -19,15 +19,18 @@ alias la='ls -A'
 alias l='ls -CF'
 alias lf=lastFile
 alias lm=lastFile
-alias m="bash ~/.cmd-tools/m/utils.sh"
-alias m_="bash ~/dev/tools/m/utils.sh"
-alias vpn="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-cri.ovpn"
-alias vpn-etu="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu.ovpn"
-alias vpn-prof="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof.ovpn"
-alias vpn-test="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-test.ovpn"
-alias cmus-path="lsof -p $(pgrep cmus)"
-
-# command
 
 alias gti='git'
 alias gpg='gpg2'
+
+alias m="bash ~/.cmd-tools/m/utils.sh"
+alias m_="bash ~/dev/tools/m/utils.sh"
+
+alias cmus-path="lsof -p $(pgrep cmus)"
+
+alias vpn="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-cri.ovpn"
+alias vpn-udp="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-cri-udp.ovpn"
+alias vpn-etu="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu.ovpn"
+alias vpn-etu-udp="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu-udp.ovpn"
+alias vpn-prof="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof.ovpn"
+alias vpn-prof-udp="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof-udp.ovpn"
