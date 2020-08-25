@@ -34,3 +34,5 @@ alias vpn-etu="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu.ovpn"
 alias vpn-etu-udp="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-etu-udp.ovpn"
 alias vpn-prof="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof.ovpn"
 alias vpn-prof-udp="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-prof-udp.ovpn"
+
+alias youtube-mp3-dl="youtube-dl --extract-audio --audio-format mp3"
