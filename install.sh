@@ -38,9 +38,9 @@ git clone https://gitlab.limos.fr/vimazeno/m.git ~/.cmd-tools/m --depth=1 > /dev
 
 wget https://raw.githubusercontent.com/themouette/dotfiles/master/zsh/zshrc.d/gnupg -O ~/.cmd-tools/gpgenv.sh > /dev/null 2>&1
 
-wget http://fc.isima.fr/~mazenod/_/isp.phar -O ~/.cmd-tools/isp > /dev/null 2>&1
+wget https://perso.limos.fr/mazenod/_/isp.phar -O ~/.cmd-tools/isp > /dev/null 2>&1
 chmod 755 ~/.cmd-tools/isp
-wget http://fc.isima.fr/~mazenod/_/wsec.phar -O ~/.cmd-tools/wsec > /dev/null 2>&1
+wget https://perso.limos.fr/mazenod/_/wsec.phar -O ~/.cmd-tools/wsec > /dev/null 2>&1
 chmod 755 ~/.cmd-tools/wsec
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1
