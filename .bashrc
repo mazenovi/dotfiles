@@ -55,6 +55,8 @@ function prompt_callback {
 export M_DEFAULT_TARGET_DIR="~/cloud/limos/vimazeno"
 export M_DEFAULT_CERT_DIR="~/cloud/limos/cri/certs"
 export M_DEFAULT_RECIPIENT="vincent.mazenod@isima.fr"
+# edit bas command line with vium
+set -o vi
 
 source ~/.cmd-tools/bash-git-prompt/gitprompt.sh
 source ~/.cmd-tools/gpgenv.sh
