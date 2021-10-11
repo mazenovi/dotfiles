@@ -63,6 +63,9 @@ source ~/.cmd-tools/gpgenv.sh
 
 export PATH=~$PATH:~/.composer/vendor/bin:~/.local/bin/:~/.cmd-tools
 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export WORKSPACE="cri"
@@ -78,3 +81,4 @@ complete -C /usr/local/bin/vault vault
 export SSH_KEY_PATH="/home/mazenovi/.ssh/keys/limosadm"
 export SSH_KEYS_PATH="/home/mazenovi/.ssh/ids"
 export SSL_KEYS_PATH="/home/mazenovi/cloud/limos/cri/certs"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

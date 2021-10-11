@@ -7,6 +7,14 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias mute-snd='amixer -q -D pulse sset Master toggle'
+alias raise-snd='amixer -q -D pulse sset Master 3%+'
+alias low-snd='amixer -q -D pulse sset Master 3%-'
+
+alias spot-play-pause='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause'
+alias spot-next='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next'
+alias spot-prev='dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous'
+
 # ls
 
 lastFile() {
