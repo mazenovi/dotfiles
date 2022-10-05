@@ -47,3 +47,7 @@ alias vpn-rescue-udp="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-rescue-udp.ovp
 alias vpn-test="sudo openvpn ~/cloud/limos/vimazeno/vpn/vpn-test.ovpn"
 
 alias youtube-mp3-dl="youtube-dl --extract-audio --audio-format mp3"
+
+alias dns-restart="sudo systemctl restart systemd-resolved"
+alias dns-flush="sudo systemd-resolve --flush-cache"
+alias dns-status="sudo resolvectl status"
